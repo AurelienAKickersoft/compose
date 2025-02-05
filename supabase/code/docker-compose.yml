@@ -164,15 +164,15 @@ services:
 
    # Add nginx to serve static html
   nginx:
-    container_name: supabase-nginx
+    #container_name: supabase-nginx
     image: nginx:alpine
     restart: unless-stopped
     ports:
       - "8080:80" # Expose port 8080 for your static files
     volumes:
       - ./../../emails:/usr/share/nginx/html:ro # Map your external static folder to the container
-    networks:
-      - supabase_default # Ensure this matches your existing network setup
+    #networks:
+     # - supabase_default # Ensure this matches your existing network setup
       # you can check the networks with `docker network ls` 
       # and see whats running within a network with `docker network inspect {network-name}`
 
@@ -484,6 +484,6 @@ services:
 
 volumes:
   db-config:
-networks:
-  supabase_default: # Ensure this matches your existing network setup
-    external: true
+#networks:
+#  supabase_default: # Ensure this matches your existing network setup
+#    external: true
