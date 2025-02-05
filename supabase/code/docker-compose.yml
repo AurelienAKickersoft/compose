@@ -484,3 +484,6 @@ services:
 
 volumes:
   db-config:
+networks:
+  supabase_default: # Ensure this matches your existing network setup
+    external: true
